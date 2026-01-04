@@ -19,5 +19,5 @@ A digital sweet selling website that replaces the manual parchi system.
 - Google Maps
 
 ## Live Demo
-Customer: https://your-username.github.io/SweetSmart/
-Admin: https://your-username.github.io/SweetSmart/admin.html
+Customer:https://priyansukumar001.github.io/darkhack/
+Admin: https://priyansukumar001.github.io/darkhack/admin.html

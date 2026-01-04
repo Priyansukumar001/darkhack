@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SweetSmart</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+</head>
+<body>
+
+<header>
+  <h1>🍬 SweetSmart</h1>
+  <p>Digital Sweet Selling Website</p>
+</header>
+
+<section class="products">
+  <div class="card">
+    <h3>Gulab Jamun</h3>
+    <p>₹20</p>
+    <button onclick="addItem('Gulab Jamun',20)">Add</button>
+  </div>
+
+  <div class="card">
+    <h3>Rasgulla</h3>
+    <p>₹25</p>
+    <button onclick="addItem('Rasgulla',25)">Add</button>
+  </div>
+
+  <div class="card">
+    <h3>Ladoo</h3>
+    <p>₹30</p>
+    <button onclick="addItem('Ladoo',30)">Add</button>
+  </div>
+</section>
+
+<section class="bill">
+  <h2>🧾 Bill</h2>
+  <ul id="billList"></ul>
+  <h3>Total: ₹<span id="total">0</span></h3>
+<button onclick="clearBill()">Clear Bill</button>
+<br>
+
+  <button class="pay" onclick="payNow()">Pay with Google Pay</button>
+</section>
+
+<section class="map">
+  <h2>📍 Shop Location</h2>
+  <iframe
+    src="https://www.google.com/maps?q=Yamuna%20Nagar%20Railway%20Station&output=embed"
+    width="100%" height="300">
+  </iframe>
+</section>
+
+<script>
+  var firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "sweet-smart.firebaseapp.com",
+    databaseURL: "https://sweet-smart-default-rtdb.firebaseio.com",
+    projectId: "sweet-smart"
+  };
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>

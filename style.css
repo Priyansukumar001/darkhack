@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #fff3e0;
+  text-align: center;
+}
+
+header {
+  background: #ff7043;
+  color: white;
+  padding: 20px;
+}
+
+.products {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  width: 180px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.card button {
+  background: #ff7043;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.bill {
+  background: white;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.pay {
+  background: green;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}

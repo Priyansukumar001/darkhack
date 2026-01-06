@@ -3,65 +3,141 @@
 <head>
   <meta charset="UTF-8">
   <title>SweetSmart</title>
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- Firebase -->
+  <!-- Firebase (Google Cloud) -->
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+  <!-- Google Pay (Official Web API – TEST MODE) -->
+  <script async
+    src="https://pay.google.com/gp/p/js/pay.js"
+    onload="onGooglePayLoaded()">
+  </script>
 </head>
+
 <body>
-  <header class="navbar">
+
+<!-- NAVBAR -->
+<header class="navbar">
   <div class="logo">🍬 SweetShop</div>
   <nav>
-    <a href="#"> Home</a>
-    <a href="#"> Products</a>
-    <a href="#"> About</a>
-    <a href="#"> Contact</a>
+    <a href="#Home">Home</a>
+    <a href="#products">Products</a>
+    <a href="#location">Location</a>
+    <a href="#">Contact</a>
   </nav>
 </header>
 
-
+<!-- TITLE -->
+<section class="hero">
   <h1>🍬 SweetSmart</h1>
   <p>Digital Sweet Selling Website</p>
+</section>
 
-<section class="products">
+<!-- PRODUCTS -->
+<section class="products" id="products">
+
   <div class="card">
+     <img src ="images\download.jpeg" alt="Gulab Jamun">
     <h3>Gulab Jamun</h3>
     <p>₹20</p>
     <button onclick="addItem('Gulab Jamun',20)">Add</button>
   </div>
 
   <div class="card">
+    <img src="images\download (1).jpeg"alt="Rasgulla">
+
     <h3>Rasgulla</h3>
     <p>₹25</p>
     <button onclick="addItem('Rasgulla',25)">Add</button>
   </div>
 
   <div class="card">
+    <img src="images\download - Copy.jpeg" alt="Ladoo">
     <h3>Ladoo</h3>
     <p>₹30</p>
     <button onclick="addItem('Ladoo',30)">Add</button>
   </div>
+   <div class="card">
+    <img src="images\images.jpeg" alt="Kaju Barfi">
+    <h3>Kaju Barfi</h3>
+    <p class="price">₹40</p>
+    <button onclick="addItem('Kaju Barfi',40)">Add</button>
+  </div>
+
+  <div class="card">
+    <img src="images\download (2).jpeg" alt="Jalebi">
+    <h3>Jalebi</h3>
+    <p class="price">₹15</p>
+    <button onclick="addItem('Jalebi',15)">Add</button>
+  </div>
+
+  <div class="card">
+    <img src="images\download (3).jpeg" alt="Peda">
+    <h3>Peda</h3>
+    <p class="price">₹35</p>
+    <button onclick="addItem('Peda',35)">Add</button>
+  </div>
+
+  <div class="card">
+    <img src="images\download (4).jpeg" alt="Rasmalai">
+    <h3>Rasmalai</h3>
+    <p class="price">₹45</p>
+    <button onclick="addItem('Rasmalai',45)">Add</button>
+  </div>
+
 </section>
 
+<!-- BILL -->
 <section class="bill">
   <h2>🧾 Bill</h2>
   <ul id="billList"></ul>
   <h3>Total: ₹<span id="total">0</span></h3>
-<button onclick="clearBill()">Clear Bill</button>
-<br>
 
-  <button class="pay" onclick="payNow()">Pay with Google Pay</button>
+  <button class="clear" onclick="clearBill()">Clear Bill</button>
+
+  <button class="pay" onclick="onGooglePayClicked()">
+    Pay with Google Pay
+  </button>
 </section>
 
-<section class="map">
+<!-- GOOGLE MAP -->
+<section class="map" id="location">
   <h2>📍 Shop Location</h2>
   <iframe
     src="https://www.google.com/maps?q=Yamuna%20Nagar%20Railway%20Station&output=embed"
-    width="100%" height="300">
+    loading="lazy">
   </iframe>
 </section>
+<footer class="footer" id="contact">
+  <div class="footer-box">
+    <h3>🍬 SweetSmart</h3>
+    <p>Fresh & premium sweets made with love.</p>
+  </div>
 
+  <div class="footer-box">
+    <h4>Contact</h4>
+    <p>📞 +91 98765 43210</p>
+    <p>📧 sweetsmart@gmail.com</p>
+    <p>📍 Railway Station Road, Yamuna Nagar</p>
+  </div>
+
+  <div class="footer-box">
+    <h4>Quick Links</h4>
+    <p>Home</p>
+    <p>Products</p>
+    <p>Location</p>
+  </div>
+</footer>
+
+<div class="copyright">
+  © 2026 SweetSmart | All Rights Reserved
+</div>
+
+<!-- FIREBASE CONFIG -->
 <script>
   var firebaseConfig = {
     apiKey: "YOUR_API_KEY",
@@ -72,6 +148,8 @@
   firebase.initializeApp(firebaseConfig);
 </script>
 
+<!-- MAIN JS -->
 <script src="script.js"></script>
+
 </body>
 </html>

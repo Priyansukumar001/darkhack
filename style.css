@@ -1,51 +1,243 @@
-body {
+/* RESET */
+* {
   margin: 0;
-  font-family: Arial;
-  background: #fff3e0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 50px;
+  background: linear-gradient(90deg, #ff7043, #ff8a65);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.navbar nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+}
+
+.navbar nav a:hover {
+  text-decoration: underline;
+}
+
+/* HERO */
+.hero {
   text-align: center;
+  padding: 50px 20px;
 }
 
-header {
-  background: #ff7043;
-  color: white;
-  padding: 20px;
+.hero h1 {
+  font-size: 40px;
+  color: #e65100;
 }
 
+.hero p {
+  font-size: 16px;
+  color: #555;
+  margin-top: 8px;
+}
+
+/* PRODUCTS */
 .products {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  padding: 20px;
+  gap: 30px;
+  padding: 40px;
+  flex-wrap: wrap;
 }
 
 .card {
-  background: white;
-  padding: 15px;
-  width: 180px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  background: #fff;
+  width: 230px;
+  padding: 25px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card h3 {
+  margin-bottom: 8px;
+}
+
+.card p {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff6f00;
 }
 
 .card button {
-  background: #ff7043;
+  margin-top: 15px;
+  padding: 10px;
+  width: 100%;
+  background: linear-gradient(90deg, #ff6f00, #ff8f00);
   color: white;
   border: none;
-  padding: 8px;
-  border-radius: 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.card button:hover {
+  opacity: 0.9;
+}
+
+/* BILL */
+.bill {
+  background: #fff;
+  margin: 40px auto;
+  padding: 30px;
+  width: 450px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+.bill h2 {
+  margin-bottom: 10px;
+}
+
+.bill ul {
+  list-style: none;
+  margin: 15px 0;
+  text-align: left;
+}
+
+.bill li {
+  padding: 4px 0;
+}
+
+.bill h3 {
+  margin: 10px 0;
+  color: #333;
+}
+
+.clear {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  background: #9e9e9e;
+  color: white;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
 }
 
-.bill {
-  background: white;
-  margin: 20px;
-  padding: 20px;
-  border-radius: 10px;
+.pay {
+  width: 100%;
+  padding: 12px;
+  background: #0f9d58;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
 }
 
-.pay {
-  background: green;
-  color: white;
-  padding: 10px;
+/* MAP */
+.map {
+  padding: 40px;
+  text-align: center;
+}
+
+.map h2 {
+  margin-bottom: 15px;
+}
+
+.map iframe {
+  width: 100%;
+  max-width: 900px;
+  height: 320px;
+  border-radius: 15px;
   border: none;
-  border-radius: 5px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .products {
+    padding: 20px;
+  }
+
+  .bill {
+    width: 90%;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+.footer {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+  background: linear-gradient(90deg, #4a148c, #6a1b9a);
+  color: white;
+}
+
+.footer-box {
+  width: 250px;
+  margin: 10px;
+}
+
+.footer-box h3,
+.footer-box h4 {
+  margin-bottom: 10px;
+}
+
+.footer-box p {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.copyright {
+  text-align: center;
+  padding: 12px;
+  background: #311b92;
+  color: white;
+  font-size: 13px;
+}
+.card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff6f00;
+}
+body {
+  background: url("images/images.jpeg") no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 243, 230, 0.9);
+  z-index: -1;
 }

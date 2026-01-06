@@ -223,7 +223,6 @@
   border-radius: 10px;
   margin-bottom: 12px;
 }
-
 .price {
   font-size: 18px;
   font-weight: bold;
@@ -241,4 +240,5 @@ body::before {
   background: rgba(255, 243, 230, 0.9);
   z-index: -1;
 }
+
 

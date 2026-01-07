@@ -19,5 +19,5 @@ A digital sweet selling website that replaces the manual parchi system.
 - Google Maps
 
 ## Live Demo
-Customer:http://127.0.0.1:5500/index.html
+Customer: https://priyansukumar001.github.io/darkhack/127.0.0.1:5500/index.html
 Admin: https://priyansukumar001.github.io/darkhack/admin.html

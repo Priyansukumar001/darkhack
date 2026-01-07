@@ -22,71 +22,89 @@
 
 <!-- NAVBAR -->
 <header class="navbar">
-  <div class="logo">🍬 SweetShop</div>
+  <div class="logo">🍬 Sweet Shop</div>
   <nav>
     <a href="#Home">Home</a>
     <a href="#products">Products</a>
     <a href="#location">Location</a>
-    <a href="#">Contact</a>
+    <a href="#contact">Contact</a>
   </nav>
 </header>
 
 <!-- TITLE -->
 <section class="hero">
-  <h1>🍬 SweetSmart</h1>
-  <p>Digital Sweet Selling Website</p>
+  <h1>🍬 <i>Sweet Smart</i></h1>
+  <p><u><b>Digital Sweet Selling Website</b></u></p>
 </section>
 
 <!-- PRODUCTS -->
 <section class="products" id="products">
 
   <div class="card">
-     <img src ="images/download.jpeg" alt="Gulab Jamun">
+     <img src ="images/gulabjamun.jpg" alt="Gulab Jamun">
     <h3>Gulab Jamun</h3>
-    <p>₹20</p>
+    <p>₹20 per piece</p>
     <button onclick="addItem('Gulab Jamun',20)">Add</button>
   </div>
 
   <div class="card">
-    <img src="images/download (1).jpeg"alt="Rasgulla">
+    <img src="images/rasgulla.jpg"alt="Rasgulla">
 
     <h3>Rasgulla</h3>
-    <p>₹25</p>
-    <button onclick="addItem('Rasgulla',25)">Add</button>
+    <p>₹15 per piece </p>
+    <button onclick="addItem('Rasgulla',15)">Add</button>
   </div>
 
   <div class="card">
-    <img src="images/download - Copy.jpeg" alt="Ladoo">
+    <img src="images/ladoo.jpg" alt="Ladoo">
     <h3>Ladoo</h3>
-    <p>₹30</p>
-    <button onclick="addItem('Ladoo',30)">Add</button>
+    <p>₹20 per peice </p>
+    <button onclick="addItem('Ladoo',20)">Add</button>
   </div>
    <div class="card">
-    <img src="images/images.jpeg" alt="Kaju Barfi">
+    <img src="images/kajubarfi.jpg" alt="Kaju Barfi">
     <h3>Kaju Barfi</h3>
-    <p class="price">₹40</p>
-    <button onclick="addItem('Kaju Barfi',40)">Add</button>
+    <p class="price">₹30 per piece </p>
+    <button onclick="addItem('Kaju Barfi',30)">Add</button>
   </div>
 
   <div class="card">
-    <img src="images/download (2).jpeg" alt="Jalebi">
+    <img src="images/jalebi.jpg" alt="Jalebi">
     <h3>Jalebi</h3>
-    <p class="price">₹15</p>
+    <p class="price">₹15 per piece</p>
     <button onclick="addItem('Jalebi',15)">Add</button>
   </div>
 
   <div class="card">
-    <img src="images/download (3).jpeg" alt="Peda">
+    <img src="images/peda.jpg" alt="Peda">
     <h3>Peda</h3>
-    <p class="price">₹35</p>
-    <button onclick="addItem('Peda',35)">Add</button>
+    <p class="price">₹20 per piece</p>
+    <button onclick="addItem('Peda',20)">Add</button>
   </div>
 
   <div class="card">
-    <img src="images/download (4).jpeg" alt="Rasmalai">
+    <img src="images/rasmalai.jpg" alt="Rasmalai">
     <h3>Rasmalai</h3>
-    <p class="price">₹45</p>
+    <p class="price">₹45 per piece</p>
     <button onclick="addItem('Rasmalai',45)">Add</button>
+  </div>
+   <div class="card">
+    <img src="images/sonpapdi.jpg" alt="Sonpapdi">
+    <h3>Sonpapdi</h3>
+    <p class="price">₹15 per piece</p>
+    <button onclick="addItem('Sonpapdi',15)">Add</button>
+  </div>
+ <div class="card">
+    <img src="images/milkcake.jpg" alt="Milk Cake">
+    <h3>Milk Cake</h3>
+    <p class="price">₹30 per piece</p>
+    <button onclick="addItem('Milk Cake',30)">Add</button>
+  </div>
+ <div class="card">
+    <img src="images/gujiya.jpg" alt="Gujiya">
+    <h3>Gujiya</h3>
+    <p class="price">₹40 per piece</p>
+    <button onclick="addItem('Gujiya',40)">Add</button>
   </div>
 
 </section>
@@ -106,7 +124,7 @@
 
 <!-- GOOGLE MAP -->
 <section class="map" id="location">
-  <h2>📍 Shop Location</h2>
+  <h2>📍<u>Shop Location</u> </h2>
   <iframe
     src="https://www.google.com/maps?q=Yamuna%20Nagar%20Railway%20Station&output=embed"
     loading="lazy">
@@ -114,22 +132,28 @@
 </section>
 <footer class="footer" id="contact">
   <div class="footer-box">
-    <h3>🍬 SweetSmart</h3>
+    <h3>🍬 <u>Sweet Smart</u> : </h3>
     <p>Fresh & premium sweets made with love.</p>
-  </div>
+    <br>
+    <p> Popular Indian sweets include Ladoo, Barfi, Jalebi, Gulab Jamun, Rasgulla, and Kaju Katli.</p>
+  <br>
+<p> Sweets are often used to express happiness, gratitude, and celebration.</p> 
+</div>
 
   <div class="footer-box">
-    <h4>Contact</h4>
+    <section class="contact" id="contact"></section>
+    <h4><u>Contact</u> : </h4>
     <p>📞 +91 98765 43210</p>
     <p>📧 sweetsmart@gmail.com</p>
-    <p>📍 Railway Station Road, Yamuna Nagar</p>
+    <p>📍  Near Railway Station Road, Yamuna Nagar</p>
   </div>
 
   <div class="footer-box">
-    <h4>Quick Links</h4>
+    <h4><u>Quick Links</u> : </h4>
     <p>Home</p>
     <p>Products</p>
     <p>Location</p>
+    <p>Contacts</p>
   </div>
 </footer>
 

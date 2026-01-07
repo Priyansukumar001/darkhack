@@ -61,7 +61,7 @@
 }
 
 .card {
-  background: #fff;
+  background: hsl(205, 17%, 50%);
   width: 230px;
   padding: 25px;
   border-radius: 14px;
@@ -102,7 +102,7 @@
 
 /* BILL */
 .bill {
-  background: #fff;
+  background: hsl(114, 14%, 45%);
   margin: 40px auto;
   padding: 30px;
   width: 450px;
@@ -223,13 +223,14 @@
   border-radius: 10px;
   margin-bottom: 12px;
 }
+
 .price {
   font-size: 18px;
   font-weight: bold;
   color: #ff6f00;
 }
 body {
-  background: url("images/images.jpeg") no-repeat center center fixed;
+  background: url("images/swee.jpg") no-repeat center center fixed;
   background-size: cover;
   color: #333;
 }
@@ -240,5 +241,3 @@ body::before {
   background: rgba(255, 243, 230, 0.9);
   z-index: -1;
 }
-
-

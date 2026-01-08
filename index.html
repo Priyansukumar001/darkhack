@@ -7,15 +7,12 @@
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- Firebase (Google Cloud) -->
+  <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
 
-  <!-- Google Pay (TEST MODE) -->
-  <script async
-    src="https://pay.google.com/gp/p/js/pay.js"
-    onload="onGooglePayLoaded()">
-  </script>
+  <!-- Google Pay -->
+  <script async src="https://pay.google.com/gp/p/js/pay.js" onload="onGooglePayLoaded()"></script>
 </head>
 
 <body>
@@ -24,75 +21,38 @@
 <header class="navbar">
   <div class="logo">🍬 Sweet Shop</div>
   <nav>
-    <a href="#Home">Home</a>
+    <a href="#home">Home</a>
     <a href="#products">Products</a>
-    <a href="#location">Location</a>
+    <a href="#about">About</a>
     <a href="#contact">Contact</a>
-    <a href="#about">About Us</a>
   </nav>
 </header>
-<!-- HERO START -->
-<section class="hero-start">
-  <div class="hero-container">
 
-    <!-- LEFT CONTENT -->
+<!-- HERO -->
+<section class="hero-start" id="home">
+  <div class="hero-container">
     <div class="hero-text">
       <span class="hero-tag">✨ Handcrafted with Love</span>
-
-      <h1>
-        Indulge in <span>Sweet</span><br>
-        Perfection
-      </h1>
-
-      <p>
-        Discover our handcrafted collection of traditional Indian sweets
-        prepared with the finest ingredients and authentic flavors.
-      </p>
-
+      <h1>Indulge in <span>Sweet</span><br>Perfection</h1>
+      <p>Discover our handcrafted collection of traditional Indian sweets.</p>
       <div class="hero-buttons">
         <a href="#products" class="btn primary">Explore Our Sweets →</a>
         <a href="#about" class="btn secondary">Learn Our Story</a>
       </div>
-
-      <div class="hero-stats">
-        <div><strong>50+</strong><br>Sweet Varieties</div>
-        <div><strong>10k+</strong><br>Happy Customers</div>
-        <div><strong>20+</strong><br>Years of Joy</div>
-      </div>
     </div>
-
-    <!-- RIGHT IMAGE -->
     <div class="hero-image">
       <img src="images/hero-sweets.jpg" alt="Sweet Collection">
-
     </div>
-
   </div>
 </section>
-<!-- HERO END -->
 
-
-<!-- PROMO SECTION -->
+<!-- PROMO -->
 <section class="promo">
   <h2 class="promo-title">“Cozy up with the sweet flavors of winter!”</h2>
-
   <div class="promo-items">
-
-    <div class="promo-card">
-      <img src="images/moongdal.jpg" alt="Moong Dal Halwa">
-      <p>Moong Dal<br>Halwa</p>
-    </div>
-
-    <div class="promo-card">
-      <img src="images/gajak.jpg" alt="Gajaks & Revdi">
-      <p>Gajaks &<br>Revdi</p>
-    </div>
-
-    <div class="promo-card">
-      <img src="images/ladoo.jpg" alt=" Ladoo">
-      <p>Ladoo</p>
-    </div>
-
+    <div class="promo-card"><img src="images/moongdal.jpg"><p>Moong Dal<br>Halwa</p></div>
+    <div class="promo-card"><img src="images/gajak.jpg"><p>Gajak &<br>Revdi</p></div>
+    <div class="promo-card"><img src="images/ladoo.jpg"><p>Ladoo</p></div>
   </div>
 </section>
 
@@ -100,31 +60,12 @@
   <h3>Our collection</h3>
   <h1><i> Featured Sweets</i></h1>
   <p>Explore our most loved creations, each made with premium ingredients and crafted to perfection.</p>
-
-  <div class="search-container">
-    <input
-      type="text"
-      id="searchInput"
-      placeholder="Search sweets..."
-      onkeyup="searchItems()"
-    />
-    <button onclick="searchItems()">🔍</button>
-  </div>
 </section>
 
 
 <!-- PRODUCTS -->
 <section class="products" id="products">
-  <p id="noResult" style="
-  display:none;
-  text-align:center;
-  font-size:18px;
-  color:#ff4d4d;
-  margin-top:20px;
-">
-  ❌ No sweet found
-</p>
-
+  <p id="noResult" style="display:none;text-align:center;color:red;">❌ No sweet found</p>
 
   <!-- Gulab Jamun -->
   <div class="card sweet-item" data-name="Gulab Jamun">
@@ -279,10 +220,7 @@
     </div>
     <button onclick="addItem('Gajak', 15, 'Gajak')">Add to Bill</button>
   </div>
-  <div class="view-all-container">
-  <button id="viewAllBtn" onclick="viewAllProducts()">
-    View All Products
-  </button>
+ 
 </div>
 <div class="card sweet-item" data-name="Malpua">
   <img src="images/malpua.jpg" alt="Malpua">
@@ -385,26 +323,16 @@
   </div>
   <button onclick="addItem('Rabri', 40, 'rabri')">Add to Bill</button>
 </div>
+<div class="view-all-container">
+  <button id="viewAllBtn" onclick="viewAllProducts()">View All Products</button>
+  <button id="closeAllBtn" onclick="closeAllProducts()" style="display:none;">View less</button>
+</div>
+
+
 
 </section>
 
 
-<!-- BILL -->
-<section class="bill">
-  <h2>🧾 Bill</h2>
-  <ul id="billList"></ul>
-  <h3>Total: ₹<span id="total">0</span></h3>
-  <button class="clear" onclick="clearBill()">Clear Bill</button>
-  <button class="pay" onclick="onGooglePayClicked()">Pay with Google Pay</button>
-</section>
-<!-- MAP -->
-<section class="map" id="location">
-  <h2>📍 Shop Location</h2>
-  <iframe
-    src="https://www.google.com/maps?q=Yamuna%20Nagar%20Railway%20Station&output=embed"
-    loading="lazy">
-  </iframe>
-</section>
 
 <!-- ABOUT US -->
 <section class="about" id="about">
@@ -489,15 +417,7 @@
 
 
 <!-- FIREBASE CONFIG -->
-<script>
-  var firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "sweet-smart.firebaseapp.com",
-    databaseURL: "https://sweet-smart-default-rtdb.firebaseio.com",
-    projectId: "sweet-smart"
-  };
-  firebase.initializeApp(firebaseConfig);
-</script>
+
 <!-- CONTACT SECTION -->
 <section class="contact-section" id="contact">
   <div class="contact-container">
@@ -599,6 +519,75 @@
   © 2026 SweetSmart | All Rights Reserved by Priyansu kumar,Vikram kumar
 </div>
 
+
+<!-- ================= FLOATING MENU ================= -->
+
+<div class="fab" onclick="toggleUtility()">☰</div>
+
+<div class="utility-panel" id="utilityPanel">
+  <button onclick="openPopup('searchPopup')">🔍 Search</button>
+  <button onclick="openPopup('billPopup')">🧾 Bill</button>
+  <button onclick="openPopup('locationPopup')">📍 Location</button>
+  <button onclick="openPopup('billPopup')">💳 Payment</button>
+</div>
+
+<!-- ================= POPUPS ================= -->
+<!-- OVERLAY -->
+<div id="overlay" onclick="closePopup()"></div>
+
+<!-- POPUP BOX -->
+<div id="popup">
+
+  <!-- CLOSE BUTTON -->
+  <span class="popup-close" onclick="closePopup()">✖</span>
+
+  <!-- SEARCH -->
+  <div class="popup-section" id="searchPopup">
+    <h3>🔍 Search Sweets</h3>
+    <input type="text" id="searchInput" placeholder="Search sweets..." onkeyup="searchItems()">
+  </div>
+
+  <!-- BILL -->
+  <div class="popup-section" id="billPopup">
+    <div class="bill-card">
+      <h3 class="bill-title">🧾 Your Bill</h3>
+      <ul id="billList" class="bill-items"></ul>
+      <div class="bill-total">Total: ₹<span id="total">0</span></div>
+
+      <div class="bill-actions">
+        <button class="btn-clear" onclick="clearBill()">Clear Bill</button>
+        <button class="btn-pay" onclick="onGooglePayClicked()">Pay with Google Pay</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOCATION -->
+  <div class="popup-section" id="locationPopup">
+    <h3>📍 Shop Location</h3>
+    <iframe
+      src="https://www.google.com/maps?q=Yamuna%20Nagar%20Railway%20Station&output=embed"
+      loading="lazy">
+    </iframe>
+  </div>
+
+  <!-- PAYMENT -->
+  <div class="popup-section" id="paymentPopup">
+    <h3>💳 Payment</h3>
+    <button class="btn-pay" onclick="onGooglePayClicked()">Pay with Google Pay</button>
+  </div>
+
+</div>
+
+    
+<!-- FIREBASE CONFIG -->
+<script>
+  firebase.initializeApp({
+    apiKey: "YOUR_API_KEY",
+    authDomain: "sweet-smart.firebaseapp.com",
+    databaseURL: "https://sweet-smart-default-rtdb.firebaseio.com",
+    projectId: "sweet-smart"
+  });
+</script>
 
 <!-- MAIN JS -->
 <script src="script.js"></script>

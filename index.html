@@ -526,57 +526,75 @@
 
 <div class="utility-panel" id="utilityPanel">
   <button onclick="openPopup('searchPopup')">🔍 Search</button>
-  <button onclick="openPopup('billPopup')">🧾 Bill</button>
+  <button onclick="openPopup('billPopup')">🧾 Cart</button>
   <button onclick="openPopup('locationPopup')">📍 Location</button>
-  <button onclick="openPopup('billPopup')">💳 Payment</button>
+  <button onclick="openPopup('paymentPopup')">💳 Payment</button>
 </div>
 
 <!-- ================= POPUPS ================= -->
-<!-- OVERLAY -->
 <div id="overlay" onclick="closePopup()"></div>
 
-<!-- POPUP BOX -->
 <div id="popup">
-
-  <!-- CLOSE BUTTON -->
   <span class="popup-close" onclick="closePopup()">✖</span>
 
-  <!-- SEARCH -->
+  <!-- 🔍 SEARCH -->
   <div class="popup-section" id="searchPopup">
     <h3>🔍 Search Sweets</h3>
-    <input type="text" id="searchInput" placeholder="Search sweets..." onkeyup="searchItems()">
+    <input type="text" id="searchInput"
+           placeholder="Search sweets..."
+           onkeyup="searchItems()">
   </div>
 
-  <!-- BILL -->
+  <!-- 🧾 CART / BILL -->
   <div class="popup-section" id="billPopup">
     <div class="bill-card">
-      <h3 class="bill-title">🧾 Your Bill</h3>
+      <h3 class="bill-title">🛒 Your Cart</h3>
       <ul id="billList" class="bill-items"></ul>
       <div class="bill-total">Total: ₹<span id="total">0</span></div>
 
       <div class="bill-actions">
-        <button class="btn-clear" onclick="clearBill()">Clear Bill</button>
-        <button class="btn-pay" onclick="onGooglePayClicked()">Pay with Google Pay</button>
+        <button class="btn-clear" onclick="clearBill()">Clear</button>
+        <button class="btn-pay" onclick="downloadBill()">Download Bill</button>
+      </div>
+
+      <div class="bill-actions">
+        <button class="btn-pay" onclick="openPopup('paymentPopup')">
+          Proceed to Pay
+        </button>
       </div>
     </div>
   </div>
 
-  <!-- LOCATION -->
+  <!-- 💳 PAYMENT -->
+  <div class="popup-section" id="paymentPopup">
+    <h3 style="text-align:center;">💳 Payment Options</h3>
+
+    <!-- UPI QR -->
+    <img src="images/upi-qr.png"
+         alt="UPI QR Code"
+         style="width:220px;margin:15px auto;display:block;">
+
+    <p style="text-align:center;font-weight:bold;">
+      Scan & Pay using any UPI app
+    </p>
+
+    <div class="bill-actions">
+      <button class="btn-pay" onclick="onGooglePayClicked()">Google Pay</button>
+      <button class="btn-clear" onclick="cashOnDelivery()">Cash on Delivery</button>
+    </div>
+  </div>
+
+  <!-- 📍 LOCATION -->
   <div class="popup-section" id="locationPopup">
     <h3>📍 Shop Location</h3>
     <iframe
-      src="https://www.google.com/maps?q=Yamuna%20Nagar%20Railway%20Station&output=embed"
-      loading="lazy">
+      src="https://www.google.com/maps?q=Yamuna%20Nagar%20Railway%20Station&output=embed">
     </iframe>
   </div>
 
-  <!-- PAYMENT -->
-  <div class="popup-section" id="paymentPopup">
-    <h3>💳 Payment</h3>
-    <button class="btn-pay" onclick="onGooglePayClicked()">Pay with Google Pay</button>
-  </div>
-
 </div>
+
+
 
     
 <!-- FIREBASE CONFIG -->

@@ -6,6 +6,20 @@
   font-family: "Segoe UI", Arial, sans-serif;
 }
 
+/* BODY BACKGROUND */
+body {
+  background: url("images/swee.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 243, 230, 0.9);
+  z-index: -1;
+}
 
 /* NAVBAR */
 .navbar {
@@ -60,6 +74,7 @@
   flex-wrap: wrap;
 }
 
+/* CARD */
 .card {
   background: hsl(205, 17%, 50%);
   width: 230px;
@@ -67,25 +82,70 @@
   border-radius: 14px;
   text-align: center;
   box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 16px 35px rgba(0,0,0,0.2);
 }
 
+/* IMAGE ENHANCEMENT */
+.card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  transition: transform 0.4s ease;
+}
+
+.card:hover img {
+  transform: scale(1.08);
+}
+
+/* TEXT */
 .card h3 {
   margin-bottom: 8px;
+  color: #fff;
 }
 
+.price,
 .card p {
   font-size: 18px;
   font-weight: bold;
-  color: #ff6f00;
+  color: #ffeb3b;
 }
 
+/* QUANTITY BOX (NEW) */
+.qty-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin: 12px 0;
+}
+
+.qty-box button {
+  width: 32px;
+  height: 32px;
+  background: #ff6f00;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.qty-box span {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+}
+
+/* ADD TO BILL BUTTON */
 .card button {
-  margin-top: 15px;
+  margin-top: 12px;
   padding: 10px;
   width: 100%;
   background: linear-gradient(90deg, #ff6f00, #ff8f00);
@@ -102,7 +162,7 @@
 
 /* BILL */
 .bill {
-  background: hsl(114, 14%, 45%);
+  background: hsl(68, 88%, 70%);
   margin: 40px auto;
   padding: 30px;
   width: 450px;
@@ -111,23 +171,15 @@
   text-align: center;
 }
 
-.bill h2 {
-  margin-bottom: 10px;
-}
-
 .bill ul {
   list-style: none;
   margin: 15px 0;
   text-align: left;
 }
 
-.bill li {
-  padding: 4px 0;
-}
-
 .bill h3 {
   margin: 10px 0;
-  color: #333;
+  color: #fff;
 }
 
 .clear {
@@ -158,16 +210,35 @@
   text-align: center;
 }
 
-.map h2 {
-  margin-bottom: 15px;
-}
-
 .map iframe {
   width: 100%;
   max-width: 900px;
   height: 320px;
   border-radius: 15px;
   border: none;
+}
+
+/* FOOTER */
+.footer {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+  background: linear-gradient(90deg, #4a148c, #6a1b9a);
+  color: white;
+}
+
+.footer-box {
+  width: 250px;
+  margin: 10px;
+}
+
+.copyright {
+  text-align: center;
+  padding: 12px;
+  background: #311b92;
+  color: white;
+  font-size: 13px;
 }
 
 /* RESPONSIVE */
@@ -184,60 +255,4 @@
     flex-direction: column;
     gap: 10px;
   }
-}
-.footer {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  padding: 40px 20px;
-  background: linear-gradient(90deg, #4a148c, #6a1b9a);
-  color: white;
-}
-
-.footer-box {
-  width: 250px;
-  margin: 10px;
-}
-
-.footer-box h3,
-.footer-box h4 {
-  margin-bottom: 10px;
-}
-
-.footer-box p {
-  font-size: 14px;
-  margin-bottom: 6px;
-}
-
-.copyright {
-  text-align: center;
-  padding: 12px;
-  background: #311b92;
-  color: white;
-  font-size: 13px;
-}
-.card img {
-  width: 100%;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 12px;
-}
-
-.price {
-  font-size: 18px;
-  font-weight: bold;
-  color: #ff6f00;
-}
-body {
-  background: url("images/swee.jpg") no-repeat center center fixed;
-  background-size: cover;
-  color: #333;
-}
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(255, 243, 230, 0.9);
-  z-index: -1;
 }

@@ -20,4 +20,4 @@ A digital sweet selling website that replaces the manual parchi system.
 
 ## Live Demo
 Customer: https://priyansukumar001.github.io/darkhack/index.html
-Admin: https://priyansukumar001.github.io/darkhack/admin.html
+

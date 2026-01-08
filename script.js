@@ -6,12 +6,42 @@ let billItems = {}; // { name: { price, qty } }
 const visibleCount = 5;
 
 /*************************
- * FLOATING MENU
+ * FLOATING MENU + BADGE
  *************************/
 function toggleUtility() {
   const panel = document.getElementById("utilityPanel");
   if (!panel) return;
   panel.style.display = panel.style.display === "flex" ? "none" : "flex";
+}
+
+function updateCartBadge() {
+  const fab = document.querySelector(".fab");
+  let count = 0;
+
+  Object.values(billItems).forEach(item => {
+    count += item.qty;
+  });
+
+  let badge = document.getElementById("cartBadge");
+  if (!badge) {
+    badge = document.createElement("span");
+    badge.id = "cartBadge";
+    badge.style.cssText = `
+      position:absolute;
+      top:-5px;
+      right:-5px;
+      background:#fff;
+      color:#ff4d4d;
+      font-size:12px;
+      font-weight:bold;
+      padding:3px 6px;
+      border-radius:50%;
+    `;
+    fab.appendChild(badge);
+  }
+
+  badge.style.display = count > 0 ? "block" : "none";
+  badge.innerText = count;
 }
 
 /*************************
@@ -36,7 +66,6 @@ function closePopup() {
   document.getElementById("popup").style.display = "none";
 }
 
-/* ESC key closes popup */
 document.addEventListener("keydown", e => {
   if (e.key === "Escape") closePopup();
 });
@@ -88,7 +117,22 @@ function addItem(name, price, id) {
   total += price * qty;
 
   updateBillUI();
+  updateCartBadge();
+
   document.getElementById("qty-" + id).innerText = 1;
+}
+
+/*************************
+ * REMOVE SINGLE ITEM
+ *************************/
+function removeItem(name) {
+  if (!billItems[name]) return;
+
+  total -= billItems[name].price * billItems[name].qty;
+  delete billItems[name];
+
+  updateBillUI();
+  updateCartBadge();
 }
 
 /*************************
@@ -98,14 +142,25 @@ function updateBillUI() {
   const billList = document.getElementById("billList");
   billList.innerHTML = "";
 
+  let i = 1;
   Object.keys(billItems).forEach(name => {
     const item = billItems[name];
     const li = document.createElement("li");
+
     li.innerHTML = `
-      <span>${name} × ${item.qty}</span>
+      <span>${i}. ${name} × ${item.qty}</span>
       <strong>₹${item.qty * item.price}</strong>
+      <button onclick="removeItem('${name}')" style="
+        background:none;
+        border:none;
+        color:red;
+        font-size:16px;
+        cursor:pointer;
+      ">❌</button>
     `;
+
     billList.appendChild(li);
+    i++;
   });
 
   document.getElementById("total").innerText = total;
@@ -119,6 +174,18 @@ function clearBill() {
   total = 0;
   document.getElementById("billList").innerHTML = "";
   document.getElementById("total").innerText = "0";
+  updateCartBadge();
+}
+
+/*************************
+ * DOWNLOAD BILL AS PDF
+ *************************/
+function downloadBill() {
+  if (total === 0) {
+    alert("Bill is empty");
+    return;
+  }
+  window.print(); // user can save as PDF
 }
 
 /*************************
@@ -148,7 +215,7 @@ function onGooglePayClicked() {
     apiVersionMinor: 0,
     allowedPaymentMethods: [{
       type: "CARD",
-      parameters: {
+          parameters: {
         allowedAuthMethods: ["PAN_ONLY", "CRYPTOGRAM_3DS"],
         allowedCardNetworks: ["VISA", "MASTERCARD"]
       },
@@ -182,6 +249,21 @@ function onGooglePayClicked() {
     });
 }
 
+
+/*************************
+ * CASH ON DELIVERY
+ *************************/
+function cashOnDelivery() {
+  if (total === 0) {
+    alert("Add items first");
+    return;
+  }
+
+  alert("Order placed with Cash on Delivery");
+  clearBill();
+  closePopup();
+}
+
 /*************************
  * INITIAL PRODUCT LIMIT
  *************************/
@@ -193,7 +275,7 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 /*************************
- * VIEW ALL / BACK BUTTON
+ * VIEW ALL / VIEW LESS
  *************************/
 function viewAllProducts() {
   document.querySelectorAll(".sweet-item").forEach(item => {
@@ -208,11 +290,7 @@ function closeAllProducts() {
   const items = document.querySelectorAll(".sweet-item");
 
   items.forEach((item, index) => {
-    if (index >= visibleCount) {
-      item.style.display = "none";
-    } else {
-      item.style.display = "block";
-    }
+    item.style.display = index < visibleCount ? "block" : "none";
   });
 
   document.getElementById("viewAllBtn").style.display = "inline-block";

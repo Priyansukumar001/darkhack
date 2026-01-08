@@ -11,7 +11,7 @@
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
 
-  <!-- Google Pay (Official Web API – TEST MODE) -->
+  <!-- Google Pay (TEST MODE) -->
   <script async
     src="https://pay.google.com/gp/p/js/pay.js"
     onload="onGooglePayLoaded()">
@@ -31,80 +31,163 @@
   </nav>
 </header>
 
-<!-- TITLE -->
+<!-- HERO -->
 <section class="hero">
   <h1>🍬 <i>Sweet Smart</i></h1>
-  <p><u><b>Digital Sweet Selling Website</b></u></p>
+  <p><b>Digital Sweet Selling Website</b></p>
 </section>
 
 <!-- PRODUCTS -->
 <section class="products" id="products">
 
+  <!-- Gulab Jamun -->
   <div class="card">
-     <img src ="images/gulabjamun.jpg" alt="Gulab Jamun">
+    <img src="images/gulabjamun.jpg" alt="Gulab Jamun">
     <h3>Gulab Jamun</h3>
-    <p>₹20 per piece</p>
-    <button onclick="addItem('Gulab Jamun',20)">Add</button>
+    <p class="price">₹20 per piece</p>
+
+    <div class="qty-box">
+      <button onclick="changeQty('gulabjamun', -1)">−</button>
+      <span id="qty-gulabjamun">1</span>
+      <button onclick="changeQty('gulabjamun', 1)">+</button>
+    </div>
+
+    <button onclick="addItem('Gulab Jamun', 20, 'gulabjamun')">Add to Bill</button>
   </div>
 
+  <!-- Rasgulla -->
   <div class="card">
-    <img src="images/rasgulla.jpg"alt="Rasgulla">
-
+    <img src="images/rasgulla.jpg" alt="Rasgulla">
     <h3>Rasgulla</h3>
-    <p>₹15 per piece </p>
-    <button onclick="addItem('Rasgulla',15)">Add</button>
+    <p class="price">₹15 per piece</p>
+
+    <div class="qty-box">
+      <button onclick="changeQty('rasgulla', -1)">−</button>
+      <span id="qty-rasgulla">1</span>
+      <button onclick="changeQty('rasgulla', 1)">+</button>
+    </div>
+
+    <button onclick="addItem('Rasgulla', 15, 'rasgulla')">Add to Bill</button>
   </div>
 
+  <!-- Ladoo -->
   <div class="card">
     <img src="images/ladoo.jpg" alt="Ladoo">
     <h3>Ladoo</h3>
-    <p>₹20 per peice </p>
-    <button onclick="addItem('Ladoo',20)">Add</button>
-  </div>
-   <div class="card">
-    <img src="images/kajubarfi.jpg" alt="Kaju Barfi">
-    <h3>Kaju Barfi</h3>
-    <p class="price">₹30 per piece </p>
-    <button onclick="addItem('Kaju Barfi',30)">Add</button>
+    <p class="price">₹20 per piece</p>
+
+    <div class="qty-box">
+      <button onclick="changeQty('ladoo', -1)">−</button>
+      <span id="qty-ladoo">1</span>
+      <button onclick="changeQty('ladoo', 1)">+</button>
+    </div>
+
+    <button onclick="addItem('Ladoo', 20, 'ladoo')">Add to Bill</button>
   </div>
 
+  <!-- Kaju Barfi -->
+  <div class="card">
+    <img src="images/kajubarfi.jpg" alt="Kaju Barfi">
+    <h3>Kaju Barfi</h3>
+    <p class="price">₹30 per piece</p>
+
+    <div class="qty-box">
+      <button onclick="changeQty('kajubarfi', -1)">−</button>
+      <span id="qty-kajubarfi">1</span>
+      <button onclick="changeQty('kajubarfi', 1)">+</button>
+    </div>
+
+    <button onclick="addItem('Kaju Barfi', 30, 'kajubarfi')">Add to Bill</button>
+  </div>
+
+  <!-- Jalebi -->
   <div class="card">
     <img src="images/jalebi.jpg" alt="Jalebi">
     <h3>Jalebi</h3>
     <p class="price">₹15 per piece</p>
-    <button onclick="addItem('Jalebi',15)">Add</button>
+
+    <div class="qty-box">
+      <button onclick="changeQty('jalebi', -1)">−</button>
+      <span id="qty-jalebi">1</span>
+      <button onclick="changeQty('jalebi', 1)">+</button>
+    </div>
+
+    <button onclick="addItem('Jalebi', 15, 'jalebi')">Add to Bill</button>
   </div>
 
+  <!-- Peda -->
   <div class="card">
     <img src="images/peda.jpg" alt="Peda">
     <h3>Peda</h3>
     <p class="price">₹20 per piece</p>
-    <button onclick="addItem('Peda',20)">Add</button>
+
+    <div class="qty-box">
+      <button onclick="changeQty('peda', -1)">−</button>
+      <span id="qty-peda">1</span>
+      <button onclick="changeQty('peda', 1)">+</button>
+    </div>
+
+    <button onclick="addItem('Peda', 20, 'peda')">Add to Bill</button>
   </div>
 
+  <!-- Rasmalai -->
   <div class="card">
     <img src="images/rasmalai.jpg" alt="Rasmalai">
     <h3>Rasmalai</h3>
     <p class="price">₹45 per piece</p>
-    <button onclick="addItem('Rasmalai',45)">Add</button>
+
+    <div class="qty-box">
+      <button onclick="changeQty('rasmalai', -1)">−</button>
+      <span id="qty-rasmalai">1</span>
+      <button onclick="changeQty('rasmalai', 1)">+</button>
+    </div>
+
+    <button onclick="addItem('Rasmalai', 45, 'rasmalai')">Add to Bill</button>
   </div>
-   <div class="card">
+
+  <!-- Sonpapdi -->
+  <div class="card">
     <img src="images/sonpapdi.jpg" alt="Sonpapdi">
     <h3>Sonpapdi</h3>
     <p class="price">₹15 per piece</p>
-    <button onclick="addItem('Sonpapdi',15)">Add</button>
+
+    <div class="qty-box">
+      <button onclick="changeQty('sonpapdi', -1)">−</button>
+      <span id="qty-sonpapdi">1</span>
+      <button onclick="changeQty('sonpapdi', 1)">+</button>
+    </div>
+
+    <button onclick="addItem('Sonpapdi', 15, 'sonpapdi')">Add to Bill</button>
   </div>
- <div class="card">
+
+  <!-- Milk Cake -->
+  <div class="card">
     <img src="images/milkcake.jpg" alt="Milk Cake">
     <h3>Milk Cake</h3>
     <p class="price">₹30 per piece</p>
-    <button onclick="addItem('Milk Cake',30)">Add</button>
+
+    <div class="qty-box">
+      <button onclick="changeQty('milkcake', -1)">−</button>
+      <span id="qty-milkcake">1</span>
+      <button onclick="changeQty('milkcake', 1)">+</button>
+    </div>
+
+    <button onclick="addItem('Milk Cake', 30, 'milkcake')">Add to Bill</button>
   </div>
- <div class="card">
+
+  <!-- Gujiya -->
+  <div class="card">
     <img src="images/gujiya.jpg" alt="Gujiya">
     <h3>Gujiya</h3>
     <p class="price">₹40 per piece</p>
-    <button onclick="addItem('Gujiya',40)">Add</button>
+
+    <div class="qty-box">
+      <button onclick="changeQty('gujiya', -1)">−</button>
+      <span id="qty-gujiya">1</span>
+      <button onclick="changeQty('gujiya', 1)">+</button>
+    </div>
+
+    <button onclick="addItem('Gujiya', 40, 'gujiya')">Add to Bill</button>
   </div>
 
 </section>
@@ -116,21 +199,20 @@
   <h3>Total: ₹<span id="total">0</span></h3>
 
   <button class="clear" onclick="clearBill()">Clear Bill</button>
-
-  <button class="pay" onclick="onGooglePayClicked()">
-    Pay with Google Pay
-  </button>
+  <button class="pay" onclick="onGooglePayClicked()">Pay with Google Pay</button>
 </section>
 
-<!-- GOOGLE MAP -->
+<!-- MAP -->
 <section class="map" id="location">
-  <h2>📍<u>Shop Location</u> </h2>
+  <h2>📍 Shop Location</h2>
   <iframe
     src="https://www.google.com/maps?q=Yamuna%20Nagar%20Railway%20Station&output=embed"
     loading="lazy">
   </iframe>
 </section>
-<footer class="footer" id="contact">
+
+<!-- FOOTER -->
+  <footer class="footer" id="contact">
   <div class="footer-box">
     <h3>🍬 <u>Sweet Smart</u> : </h3>
     <p>Fresh & premium sweets made with love.</p>
@@ -157,8 +239,9 @@
   </div>
 </footer>
 
+
 <div class="copyright">
-  © 2026 SweetSmart | All Rights Reserved
+  © 2026 SweetSmart | All Rights Reserved by Priyansu kumar,Vikram kumar
 </div>
 
 <!-- FIREBASE CONFIG -->

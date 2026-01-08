@@ -25,7 +25,27 @@ function searchItems() {
 
   document.getElementById("noResult").style.display =
     found ? "none" : "block";
+}const sweetItems = document.querySelectorAll(".sweet-item");
+const visibleCount = 5;
+
+// SHOW ONLY FIRST 5 ON LOAD
+window.addEventListener("DOMContentLoaded", () => {
+  sweetItems.forEach((item, index) => {
+    if (index >= visibleCount) {
+      item.style.display = "none";
+    }
+  });
+});
+
+// VIEW ALL FUNCTION
+function viewAllProducts() {
+  sweetItems.forEach(item => {
+    item.style.display = "";
+  });
+
+  document.getElementById("viewAllBtn").style.display = "none";
 }
+
 
 
 

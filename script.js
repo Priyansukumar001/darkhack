@@ -5,6 +5,33 @@ let total = 0;
 let billItems = {}; // { name: { price, qty } }
 
 /***********************
+ * 🔍 SEARCH FUNCTION (NEW)
+ ***********************/
+function searchItems() {
+  const input = document.getElementById("searchInput").value.toLowerCase();
+  const items = document.getElementsByClassName("sweet-item");
+  let found = false;
+
+  for (let i = 0; i < items.length; i++) {
+    const name = items[i].getAttribute("data-name").toLowerCase();
+
+    if (name.includes(input)) {
+      items[i].style.display = "";
+      found = true;
+    } else {
+      items[i].style.display = "none";
+    }
+  }
+
+  document.getElementById("noResult").style.display =
+    found ? "none" : "block";
+}
+
+
+
+
+
+/***********************
  * QUANTITY CONTROL
  ***********************/
 function changeQty(id, value) {

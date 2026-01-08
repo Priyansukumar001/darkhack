@@ -28,11 +28,78 @@
     <a href="#products">Products</a>
     <a href="#location">Location</a>
     <a href="#contact">Contact</a>
+    <a href="#about">About Us</a>
   </nav>
 </header>
+<!-- HERO START -->
+<section class="hero-start">
+  <div class="hero-container">
+
+    <!-- LEFT CONTENT -->
+    <div class="hero-text">
+      <span class="hero-tag">✨ Handcrafted with Love</span>
+
+      <h1>
+        Indulge in <span>Sweet</span><br>
+        Perfection
+      </h1>
+
+      <p>
+        Discover our handcrafted collection of traditional Indian sweets
+        prepared with the finest ingredients and authentic flavors.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#products" class="btn primary">Explore Our Sweets →</a>
+        <a href="#about" class="btn secondary">Learn Our Story</a>
+      </div>
+
+      <div class="hero-stats">
+        <div><strong>50+</strong><br>Sweet Varieties</div>
+        <div><strong>10k+</strong><br>Happy Customers</div>
+        <div><strong>20+</strong><br>Years of Joy</div>
+      </div>
+    </div>
+
+    <!-- RIGHT IMAGE -->
+    <div class="hero-image">
+      <img src="images/hero-sweets.jpg" alt="Sweet Collection">
+
+    </div>
+
+  </div>
+</section>
+<!-- HERO END -->
+
+
+<!-- PROMO SECTION -->
+<section class="promo">
+  <h2 class="promo-title">“Cozy up with the sweet flavors of winter!”</h2>
+
+  <div class="promo-items">
+
+    <div class="promo-card">
+      <img src="images/moongdal.jpg" alt="Moong Dal Halwa">
+      <p>Moong Dal<br>Halwa</p>
+    </div>
+
+    <div class="promo-card">
+      <img src="images/gajak.jpg" alt="Gajaks & Revdi">
+      <p>Gajaks &<br>Revdi</p>
+    </div>
+
+    <div class="promo-card">
+      <img src="images/ladoo.jpg" alt=" Ladoo">
+      <p>Ladoo</p>
+    </div>
+
+  </div>
+</section>
+
 <section class="hero">
-  <h1>🍬 Sweet Smart</h1>
-  <p>Digital Sweet Selling Website</p>
+  <h3>Our collection</h3>
+  <h1><i> Featured Sweets</i></h1>
+  <p>Explore our most loved creations, each made with premium ingredients and crafted to perfection.</p>
 
   <div class="search-container">
     <input
@@ -189,7 +256,37 @@
     <button onclick="addItem('Gujiya', 40, 'gujiya')">Add to Bill</button>
   </div>
 
+ <div class="card sweet-item" data-name="Moong Dal Halwa">
+    <img src="images/moongdal.jpg" alt="Moong Dal Halwa">
+    <h3>Moong Dal Halwa</h3>
+    <p class="price">₹150 per plate</p>
+    <div class="qty-box">
+      <button onclick="changeQty('Moong Dal Halwa', -1)">−</button>
+      <span id="qty-Moong Dal Halwa">1</span>
+      <button onclick="changeQty('Moong Dal Halwa', 1)">+</button>
+    </div>
+    <button onclick="addItem('Moong Dal Halwa', 15, 'Moong Dal Halwa')">Add to Bill</button>
+  </div>
+
+   <div class="card sweet-item" data-name="Gajak">
+    <img src="images/gajak.jpg" alt="Gajak">
+    <h3>Gajak</h3>
+    <p class="price">₹15 per piece</p>
+    <div class="qty-box">
+      <button onclick="changeQty('Gajak', -1)">−</button>
+      <span id="qty-Gajak">1</span>
+      <button onclick="changeQty('Gajak', 1)">+</button>
+    </div>
+    <button onclick="addItem('Gajak', 15, 'Gajak')">Add to Bill</button>
+  </div>
+  <div class="view-all-container">
+  <button id="viewAllBtn" onclick="viewAllProducts()">
+    View All Products
+  </button>
+</div>
+
 </section>
+
 
 <!-- BILL -->
 <section class="bill">
@@ -199,7 +296,6 @@
   <button class="clear" onclick="clearBill()">Clear Bill</button>
   <button class="pay" onclick="onGooglePayClicked()">Pay with Google Pay</button>
 </section>
-
 <!-- MAP -->
 <section class="map" id="location">
   <h2>📍 Shop Location</h2>
@@ -208,6 +304,88 @@
     loading="lazy">
   </iframe>
 </section>
+
+<!-- ABOUT US -->
+<section class="about" id="about">
+  <div class="about-container">
+
+    <!-- LEFT CONTENT -->
+    <div class="about-text">
+      <h4>About Us</h4>
+      <h2>Crafting Sweet Moments<br>Since 2006</h2>
+
+      <p>
+        What started as a small family sweet shop has grown into a trusted
+        destination for authentic Indian sweets. For over a decade, we have
+        been serving happiness through taste, tradition, and quality.
+      </p>
+
+      <p>
+        At SweetSmart, our expert halwais blend traditional recipes with modern
+        hygiene standards to create sweets that delight every celebration.
+      </p>
+
+      <div class="about-features">
+        <div class="feature">
+          <span>🍯</span>
+          <div>
+            <h5>Premium Quality</h5>
+            <p>Only the finest ingredients sourced from trusted suppliers</p>
+          </div>
+        </div>
+
+        <div class="feature">
+          <span>🌿</span>
+          <div>
+            <h5>All Natural</h5>
+            <p>No artificial colors, flavors, or preservatives</p>
+          </div>
+        </div>
+
+        <div class="feature">
+          <span>❤️</span>
+          <div>
+            <h5>Made with Love</h5>
+            <p>Every sweet is prepared with care and passion</p>
+          </div>
+        </div>
+
+        <div class="feature">
+          <span>🕒</span>
+          <div>
+            <h5>Fresh Daily</h5>
+            <p>Prepared fresh every day for best taste</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT STATS -->
+    <div class="about-stats">
+      <div class="stat-card">
+        <h3>20+</h3>
+        <p>Years Experience</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>10k+</h3>
+        <p>Happy Customers</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>50+</h3>
+        <p>Sweet Varieties</p>
+      </div>
+
+      <div class="stat-card highlight">
+        <h3>100%</h3>
+        <p>Natural Ingredients</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
 <!-- FIREBASE CONFIG -->
 <script>
@@ -219,6 +397,76 @@
   };
   firebase.initializeApp(firebaseConfig);
 </script>
+<!-- CONTACT SECTION -->
+<section class="contact-section" id="contact">
+  <div class="contact-container">
+
+    <!-- LEFT INFO -->
+    <div class="contact-info">
+      <h4>Get in Touch</h4>
+      <h2>Let’s Create Sweet<br>Memories</h2>
+
+      <p>
+        Have a question or want to place a custom order?
+        We'd love to hear from you!
+      </p>
+
+      <div class="contact-details">
+        <div class="contact-box">
+          <span>📍</span>
+          <div>
+            <h5>Visit Us</h5>
+            <p>Near Railway Station Road,<br>Yamuna Nagar</p>
+          </div>
+        </div>
+
+        <div class="contact-box">
+          <span>📞</span>
+          <div>
+            <h5>Call Us</h5>
+            <p>+91 98765 43210</p>
+          </div>
+        </div>
+
+        <div class="contact-box">
+          <span>📧</span>
+          <div>
+            <h5>Email Us</h5>
+            <p>sweetsmart@gmail.com</p>
+          </div>
+        </div>
+
+        <div class="contact-box">
+          <span>⏰</span>
+          <div>
+            <h5>Opening Hours</h5>
+            <p>Mon–Sat: 9am – 8pm<br>Sun: 10am – 6pm</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT FORM -->
+    <div class="contact-form">
+      <h3>Send us a Message</h3>
+
+      <form>
+        <div class="form-row">
+          <input type="text" placeholder="First Name" required>
+          <input type="text" placeholder="Last Name" required>
+        </div>
+
+        <input type="email" placeholder="Email" required>
+
+        <textarea rows="5" placeholder="Tell us about your order or question..." required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
 <!-- FOOTER -->
   <footer class="footer" id="contact">
   <div class="footer-box">

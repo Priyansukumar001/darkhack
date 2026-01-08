@@ -30,163 +30,162 @@
     <a href="#contact">Contact</a>
   </nav>
 </header>
-
-<!-- HERO -->
 <section class="hero">
-  <h1>🍬 <i>Sweet Smart</i></h1>
-  <p><b>Digital Sweet Selling Website</b></p>
+  <h1>🍬 Sweet Smart</h1>
+  <p>Digital Sweet Selling Website</p>
+
+  <div class="search-container">
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search sweets..."
+      onkeyup="searchItems()"
+    />
+    <button onclick="searchItems()">🔍</button>
+  </div>
 </section>
+
 
 <!-- PRODUCTS -->
 <section class="products" id="products">
+  <p id="noResult" style="
+  display:none;
+  text-align:center;
+  font-size:18px;
+  color:#ff4d4d;
+  margin-top:20px;
+">
+  ❌ No sweet found
+</p>
+
 
   <!-- Gulab Jamun -->
-  <div class="card">
+  <div class="card sweet-item" data-name="Gulab Jamun">
     <img src="images/gulabjamun.jpg" alt="Gulab Jamun">
     <h3>Gulab Jamun</h3>
     <p class="price">₹20 per piece</p>
-
     <div class="qty-box">
       <button onclick="changeQty('gulabjamun', -1)">−</button>
       <span id="qty-gulabjamun">1</span>
       <button onclick="changeQty('gulabjamun', 1)">+</button>
     </div>
-
     <button onclick="addItem('Gulab Jamun', 20, 'gulabjamun')">Add to Bill</button>
   </div>
 
   <!-- Rasgulla -->
-  <div class="card">
+  <div class="card sweet-item" data-name="Rasgulla">
     <img src="images/rasgulla.jpg" alt="Rasgulla">
     <h3>Rasgulla</h3>
     <p class="price">₹15 per piece</p>
-
     <div class="qty-box">
       <button onclick="changeQty('rasgulla', -1)">−</button>
       <span id="qty-rasgulla">1</span>
       <button onclick="changeQty('rasgulla', 1)">+</button>
     </div>
-
     <button onclick="addItem('Rasgulla', 15, 'rasgulla')">Add to Bill</button>
   </div>
 
   <!-- Ladoo -->
-  <div class="card">
+  <div class="card sweet-item" data-name="Ladoo">
     <img src="images/ladoo.jpg" alt="Ladoo">
     <h3>Ladoo</h3>
     <p class="price">₹20 per piece</p>
-
     <div class="qty-box">
       <button onclick="changeQty('ladoo', -1)">−</button>
       <span id="qty-ladoo">1</span>
       <button onclick="changeQty('ladoo', 1)">+</button>
     </div>
-
     <button onclick="addItem('Ladoo', 20, 'ladoo')">Add to Bill</button>
   </div>
 
   <!-- Kaju Barfi -->
-  <div class="card">
+  <div class="card sweet-item" data-name="Kaju Barfi">
     <img src="images/kajubarfi.jpg" alt="Kaju Barfi">
     <h3>Kaju Barfi</h3>
     <p class="price">₹30 per piece</p>
-
     <div class="qty-box">
       <button onclick="changeQty('kajubarfi', -1)">−</button>
       <span id="qty-kajubarfi">1</span>
       <button onclick="changeQty('kajubarfi', 1)">+</button>
     </div>
-
     <button onclick="addItem('Kaju Barfi', 30, 'kajubarfi')">Add to Bill</button>
   </div>
 
   <!-- Jalebi -->
-  <div class="card">
+  <div class="card sweet-item" data-name="Jalebi">
     <img src="images/jalebi.jpg" alt="Jalebi">
     <h3>Jalebi</h3>
     <p class="price">₹15 per piece</p>
-
     <div class="qty-box">
       <button onclick="changeQty('jalebi', -1)">−</button>
       <span id="qty-jalebi">1</span>
       <button onclick="changeQty('jalebi', 1)">+</button>
     </div>
-
     <button onclick="addItem('Jalebi', 15, 'jalebi')">Add to Bill</button>
   </div>
 
   <!-- Peda -->
-  <div class="card">
+  <div class="card sweet-item" data-name="Peda">
     <img src="images/peda.jpg" alt="Peda">
     <h3>Peda</h3>
     <p class="price">₹20 per piece</p>
-
     <div class="qty-box">
       <button onclick="changeQty('peda', -1)">−</button>
       <span id="qty-peda">1</span>
       <button onclick="changeQty('peda', 1)">+</button>
     </div>
-
     <button onclick="addItem('Peda', 20, 'peda')">Add to Bill</button>
   </div>
 
   <!-- Rasmalai -->
-  <div class="card">
+  <div class="card sweet-item" data-name="Rasmalai">
     <img src="images/rasmalai.jpg" alt="Rasmalai">
     <h3>Rasmalai</h3>
     <p class="price">₹45 per piece</p>
-
     <div class="qty-box">
       <button onclick="changeQty('rasmalai', -1)">−</button>
       <span id="qty-rasmalai">1</span>
       <button onclick="changeQty('rasmalai', 1)">+</button>
     </div>
-
     <button onclick="addItem('Rasmalai', 45, 'rasmalai')">Add to Bill</button>
   </div>
 
   <!-- Sonpapdi -->
-  <div class="card">
+  <div class="card sweet-item" data-name="Sonpapdi">
     <img src="images/sonpapdi.jpg" alt="Sonpapdi">
     <h3>Sonpapdi</h3>
     <p class="price">₹15 per piece</p>
-
     <div class="qty-box">
       <button onclick="changeQty('sonpapdi', -1)">−</button>
       <span id="qty-sonpapdi">1</span>
       <button onclick="changeQty('sonpapdi', 1)">+</button>
     </div>
-
     <button onclick="addItem('Sonpapdi', 15, 'sonpapdi')">Add to Bill</button>
   </div>
 
   <!-- Milk Cake -->
-  <div class="card">
+  <div class="card sweet-item" data-name="Milk Cake">
     <img src="images/milkcake.jpg" alt="Milk Cake">
     <h3>Milk Cake</h3>
     <p class="price">₹30 per piece</p>
-
     <div class="qty-box">
       <button onclick="changeQty('milkcake', -1)">−</button>
       <span id="qty-milkcake">1</span>
       <button onclick="changeQty('milkcake', 1)">+</button>
     </div>
-
     <button onclick="addItem('Milk Cake', 30, 'milkcake')">Add to Bill</button>
   </div>
 
   <!-- Gujiya -->
-  <div class="card">
+  <div class="card sweet-item" data-name="Gujiya">
     <img src="images/gujiya.jpg" alt="Gujiya">
     <h3>Gujiya</h3>
     <p class="price">₹40 per piece</p>
-
     <div class="qty-box">
       <button onclick="changeQty('gujiya', -1)">−</button>
       <span id="qty-gujiya">1</span>
       <button onclick="changeQty('gujiya', 1)">+</button>
     </div>
-
     <button onclick="addItem('Gujiya', 40, 'gujiya')">Add to Bill</button>
   </div>
 
@@ -197,7 +196,6 @@
   <h2>🧾 Bill</h2>
   <ul id="billList"></ul>
   <h3>Total: ₹<span id="total">0</span></h3>
-
   <button class="clear" onclick="clearBill()">Clear Bill</button>
   <button class="pay" onclick="onGooglePayClicked()">Pay with Google Pay</button>
 </section>
@@ -211,6 +209,16 @@
   </iframe>
 </section>
 
+<!-- FIREBASE CONFIG -->
+<script>
+  var firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "sweet-smart.firebaseapp.com",
+    databaseURL: "https://sweet-smart-default-rtdb.firebaseio.com",
+    projectId: "sweet-smart"
+  };
+  firebase.initializeApp(firebaseConfig);
+</script>
 <!-- FOOTER -->
   <footer class="footer" id="contact">
   <div class="footer-box">
@@ -238,22 +246,10 @@
     <p>Contacts</p>
   </div>
 </footer>
-
-
 <div class="copyright">
   © 2026 SweetSmart | All Rights Reserved by Priyansu kumar,Vikram kumar
 </div>
 
-<!-- FIREBASE CONFIG -->
-<script>
-  var firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "sweet-smart.firebaseapp.com",
-    databaseURL: "https://sweet-smart-default-rtdb.firebaseio.com",
-    projectId: "sweet-smart"
-  };
-  firebase.initializeApp(firebaseConfig);
-</script>
 
 <!-- MAIN JS -->
 <script src="script.js"></script>

@@ -1,25 +1,69 @@
+/***********************
+ * GLOBAL STATE
+ ***********************/
 let total = 0;
-let items = [];
+let billItems = {}; // { name: { price, qty } }
 
-/* BILL LOGIC */
-function addItem(name, price) {
-  const li = document.createElement("li");
-  li.textContent = `${name} - ₹${price}`;
-  document.getElementById("billList").appendChild(li);
+/***********************
+ * QUANTITY CONTROL
+ ***********************/
+function changeQty(id, value) {
+  const qtySpan = document.getElementById("qty-" + id);
+  let qty = parseInt(qtySpan.innerText);
+  qty += value;
+  if (qty < 1) qty = 1;
+  qtySpan.innerText = qty;
+}
 
-  total += price;
-  items.push(name);
+/***********************
+ * ADD ITEM TO BILL
+ ***********************/
+function addItem(name, price, id) {
+  const qty = parseInt(document.getElementById("qty-" + id).innerText);
+
+  if (!billItems[name]) {
+    billItems[name] = { price: price, qty: 0 };
+  }
+
+  billItems[name].qty += qty;
+  total += price * qty;
+
+  updateBillUI();
+
+  // reset qty
+  document.getElementById("qty-" + id).innerText = 1;
+}
+
+/***********************
+ * UPDATE BILL UI
+ ***********************/
+function updateBillUI() {
+  const billList = document.getElementById("billList");
+  billList.innerHTML = "";
+
+  Object.keys(billItems).forEach(name => {
+    const item = billItems[name];
+    const li = document.createElement("li");
+    li.innerText = `${name} × ${item.qty} = ₹${item.price * item.qty}`;
+    billList.appendChild(li);
+  });
+
   document.getElementById("total").innerText = total;
 }
 
+/***********************
+ * CLEAR BILL
+ ***********************/
 function clearBill() {
-  document.getElementById("billList").innerHTML = "";
+  billItems = {};
   total = 0;
-  items = [];
-  document.getElementById("total").innerText = total;
+  document.getElementById("billList").innerHTML = "";
+  document.getElementById("total").innerText = 0;
 }
 
-/* GOOGLE PAY */
+/***********************
+ * GOOGLE PAY
+ ***********************/
 let paymentsClient = null;
 
 function onGooglePayLoaded() {
@@ -68,10 +112,12 @@ function onGooglePayClicked() {
     .catch(err => console.log("Payment cancelled", err));
 }
 
-/* FIREBASE SAVE */
+/***********************
+ * FIREBASE SAVE
+ ***********************/
 function saveOrderToFirebase(paymentData) {
   firebase.database().ref("orders").push({
-    items: items,
+    items: billItems,
     totalAmount: total,
     paymentMode: "Google Pay (TEST)",
     paymentToken: paymentData.paymentMethodData.tokenizationData.token,

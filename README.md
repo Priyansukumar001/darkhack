@@ -1,49 +1,58 @@
 # darkhack
+# 🍬 SweetSmart
 
-🍬 SweetSmart
+SweetSmart is a digital sweet-selling website designed to replace the traditional
+manual *parchi (paper slip)* billing system with a modern, user-friendly solution.
 
-SweetSmart is a digital sweet-selling website designed to replace the traditional manual parchi (paper slip) billing system.
-It provides a smooth, modern, and user-friendly experience for customers and shop owners.
+---
 
-🚀 Features :-
+## 🚀 Features
 
-1.🧾 Digital Billing System
-2.🛒 Interactive Cart with Quantity Control
-3.🔍 Search Sweets Easily
-4.💳 Google Pay (UPI) Payment – Demo Mode
-5.📍 Google Maps Integration for Shop Location
-6.📱 Mobile-Friendly & Responsive UI
-7.🖨️ Download / Print Bill
+- 🧾 Digital billing system
+- 🛒 Interactive cart with quantity control
+- 🔍 Search sweets easily
+- 💳 Google Pay (UPI) payment – demo mode
+- 📍 Google Maps integration for shop location
+- 📱 Responsive and mobile-friendly design
+- 🖨️ Download / print bill option
 
-🛠️ Technologies Used :-
+---
 
-1. HTML – Structure
-2. CSS – Styling & Layout
-3. JavaScript – Functionality & Logic
-4. Google Pay API – UPI Payment (Demo)
-5. Google Maps Embed – Location Display
+## 🛠️ Technologies Used
 
-🌐 Live Demo :-
+- HTML – Structure
+- CSS – Styling and layout
+- JavaScript – Functionality and logic
+- Google Pay API – UPI payment (demo)
+- Google Maps Embed – Location display
 
-👉 Customer Website:
+---
+
+## 🌐 Live Demo
+
+Customer Website:
 https://priyansukumar001.github.io/darkhack/index.html
 
-🎯 Purpose of the Project:-
+---
 
-This project was built to:
+## 🎯 Project Objective
 
- 1. Eliminate handwritten billing slips
- 2. Speed up the billing process
- 3. Reduce human errors
- 4. Provide a modern digital experience for sweet shops
+- Replace handwritten billing slips
+- Speed up the billing process
+- Reduce manual errors
+- Provide a modern digital experience for sweet shops
 
-📌 Note:-
+---
 
-.This project is currently frontend-only
-.Payments are shown in demo mode
-.No backend/database is used
+## 📌 Note
 
-👨‍💻 Author
+- This is a frontend-only project
+- Payments are in demo mode
+- No backend or database is used
 
-Priyansu Kumar
-Made with ❤️ for digital India
+---
+
+## 👨‍💻 Author
+
+Priyanshu Kumar  
+Made with ❤️ for Digital India

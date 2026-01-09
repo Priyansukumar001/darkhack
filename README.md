@@ -1,6 +1,7 @@
 # darkhack
 
 🍬 SweetSmart
+
 SweetSmart is a digital sweet-selling website designed to replace the traditional manual parchi (paper slip) billing system.
 It provides a smooth, modern, and user-friendly experience for customers and shop owners.
 

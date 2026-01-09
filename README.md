@@ -54,5 +54,5 @@ https://priyansukumar001.github.io/darkhack/index.html
 
 ## 👨‍💻 Author
 
-Priyanshu Kumar  
+Priyansu Kumar  
 Made with ❤️ for Digital India
